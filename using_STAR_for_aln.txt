@@ -1,0 +1,13 @@
+# !/bin/bash
+
+# here i call STAR to take the human genome and the gtf, that was downloaded from the ensembl website,
+# and i unzip the human genome and its gtf file to then use as parameters in the code.
+# this will allow me to build a reference genome locally, i think.
+# which i will then use other STAR commands to align the fastq files, generated in the other script
+# called get_fastq_from_runs.txt, to the human genome created here
+# 
+STAR --runMode genomeGenerate -- genomeDir ref/ --genomeFastaFiles Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa --sjdbGTFfile Homo_sapiens.GRCh38.108.gtf --runThreadN 16
+
+# note: this ends with an error and i don't know how to fix it yet.
+# when i look at the Log.out file it looks like it had no problem generating the genome and there 
+# were no errors written in the Log.out file. so maybe it did work?
