@@ -1,0 +1,9 @@
+# !/bin/sh
+
+# looping through the file that contains the SRR runs
+# then i want to use sra-toolkit to get the fastq files
+
+for x in $(cat SRR_Acc_List.txt)
+do 
+ fastq-dump $x
+done
